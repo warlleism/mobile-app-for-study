@@ -1,6 +1,15 @@
-import React from 'react';
-import { TouchableOpacity, View } from 'react-native';
-import styled from 'styled-components/native';
+import React from "react";
+import { TouchableOpacity, View } from "react-native";
+import styled from "styled-components/native";
+
+const StyledContainerTransition = styled(View)`
+  margin-bottom: 36px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+`;
 
 const StyledTouchableOpacity = styled(TouchableOpacity)`
   /* Estilos para TouchableOpacity, se necessário */
@@ -31,9 +40,13 @@ const ThirdLine = styled(View)`
   width: 10px;
 `;
 
+const ContainerTransition = ({ children }) => {
+  return <StyledContainerTransition>{children}</StyledContainerTransition>;
+};
+
 const CustomComponent = () => {
   return (
-    <StyledTouchableOpacity onPress={()=>console.log('teste')}>
+    <StyledTouchableOpacity onPress={() => console.log("teste")}>
       <StyledView>
         <FirstLine />
         <SecondLine />
@@ -43,4 +56,4 @@ const CustomComponent = () => {
   );
 };
 
-export default CustomComponent;
+export { CustomComponent, ContainerTransition };

@@ -3,6 +3,8 @@ import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 import { Gesture, GestureDetector, ScrollView } from "react-native-gesture-handler";
 import { Extrapolate, interpolate, runOnJS, useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated";
 import Animated from 'react-native-reanimated';
+import { ContainerTransition } from "../../styled-components/styled";
+
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window')
 
@@ -68,7 +70,7 @@ const BottomSheet = ({ show, handlerShowContent }: any) => {
 
                         <Text style={{ fontWeight: '700', marginBottom: 32 }}>Trasações Recentes</Text>
 
-                        <View style={styles.containerTrasition}>
+                        <ContainerTransition>
                             <View style={styles.containerInfo}>
                                 <Image
                                     source={require('../../../assets/steam.png')}
@@ -80,9 +82,9 @@ const BottomSheet = ({ show, handlerShowContent }: any) => {
                                 </View>
                             </View>
                             <Text style={{ paddingRight: 30, color: "#07ff06" }}>+39,99</Text>
-                        </View>
+                        </ContainerTransition>
 
-                        <View style={styles.containerTrasition}>
+                        <ContainerTransition>
                             <View style={styles.containerInfo}>
                                 <Image
                                     source={require('../../../assets/recive.png')}
@@ -95,9 +97,9 @@ const BottomSheet = ({ show, handlerShowContent }: any) => {
                                 </View>
                             </View>
                             <Text style={{ paddingRight: 30, color: "#e72698" }}>-39,99</Text>
-                        </View>
+                        </ContainerTransition>
 
-                        <View style={styles.containerTrasition}>
+                        <ContainerTransition>
                             <View style={styles.containerInfo}>
                                 <Image
                                     source={require('../../../assets/recive.png')}
@@ -110,9 +112,9 @@ const BottomSheet = ({ show, handlerShowContent }: any) => {
                                 </View>
                             </View>
                             <Text style={{ paddingRight: 30, color: "#07ff06" }}>+39,99</Text>
-                        </View>
+                        </ContainerTransition>
 
-                        <View style={styles.containerTrasition}>
+                        <ContainerTransition>
                             <View style={styles.containerInfo}>
                                 <Image
                                     source={require('../../../assets/steam.png')}
@@ -124,9 +126,9 @@ const BottomSheet = ({ show, handlerShowContent }: any) => {
                                 </View>
                             </View>
                             <Text style={{ paddingRight: 30, color: "#e72698" }}>-39,99</Text>
-                        </View>
+                        </ContainerTransition>
 
-                        <View style={styles.containerTrasition}>
+                        <ContainerTransition>
                             <View style={styles.containerInfo}>
                                 <Image
                                     source={require('../../../assets/recive.png')}
@@ -139,9 +141,9 @@ const BottomSheet = ({ show, handlerShowContent }: any) => {
                                 </View>
                             </View>
                             <Text style={{ paddingRight: 30, color: "#e72698" }}>-39,99</Text>
-                        </View>
+                        </ContainerTransition>
 
-                        <View style={styles.containerTrasition}>
+                        <ContainerTransition>
                             <View style={styles.containerInfo}>
                                 <Image
                                     source={require('../../../assets/steam.png')}
@@ -153,9 +155,9 @@ const BottomSheet = ({ show, handlerShowContent }: any) => {
                                 </View>
                             </View>
                             <Text style={{ paddingRight: 30, color: "#e72698" }}>-39,99</Text>
-                        </View>
+                        </ContainerTransition>
 
-                        <View style={styles.containerTrasition}>
+                        <ContainerTransition>
                             <View style={styles.containerInfo}>
                                 <Image
                                     source={require('../../../assets/recive.png')}
@@ -168,7 +170,7 @@ const BottomSheet = ({ show, handlerShowContent }: any) => {
                                 </View>
                             </View>
                             <Text style={{ paddingRight: 30, color: "#e72698" }}>-39,99</Text>
-                        </View>
+                        </ContainerTransition>
 
                     </ScrollView>
                 </View>
@@ -180,14 +182,7 @@ const BottomSheet = ({ show, handlerShowContent }: any) => {
 };
 
 const styles = StyleSheet.create({
-    containerTrasition: {
-        marginBottom: 36,
-        display: "flex",
-        justifyContent: "space-between",
-        flexDirection: "row",
-        alignItems: "center",
-        gap: 10
-    },
+
     containerInfo: {
         display: "flex",
         flexDirection: "row",
